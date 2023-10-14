@@ -5,7 +5,7 @@
     "description": "CSE341 Personal Project - Music Students & Books",
     "version": "1.0.0"
   },
-  "host": "https://js-musicstudents-cse341.onrender.com",
+  "host": "js-musicstudents-cse341.onrender.com",
   "basePath": "/",
   "schemes": [
     "https"

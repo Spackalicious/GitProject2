@@ -6,7 +6,7 @@ const doc = {
     description: 'CSE341 Personal Project - Music Students & Books',
   },
   // host: 'localhost:8080',
-  host: 'https://js-musicstudents-cse341.onrender.com',
+  host: 'js-musicstudents-cse341.onrender.com',
   schemes: ['https'],
   // schemes: ['http']
 };
