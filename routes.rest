@@ -1,0 +1,196 @@
+# LOCALHOST
+### GET
+http://localhost:8080
+
+### GET all students
+http://localhost:8080/students
+
+### DELETE student (easier up here, out of order; I'm being lazy!)
+DELETE http://localhost:8080/students/6528b160f9c2c2f2f99ac46a HTTP/1.1
+
+### GET Gabby (student by id)
+http://localhost:8080/students/6528af7374ef262b0d2b1890
+
+### GET Lydia (student by id)
+http://localhost:8080/students/6528af7374ef262b0d2b1891
+
+### GET Millie (student by id)
+http://localhost:8080/students/6528af7374ef262b0d2b1892
+
+### GET Bryn (student by id)
+http://localhost:8080/students/6528af7374ef262b0d2b1894
+
+### GET Henrik (student by id)
+http://localhost:8080/students/6528af7374ef262b0d2b1893
+
+### GET newest student by id
+http://localhost:8080/students/6528b18af9c2c2f2f99ac46b
+
+### CREATE CONTACT
+POST http://localhost:8080/students HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "Joshua",
+    "lastName": "Bourne",
+    "parentName": "Erica",
+    "email": "erica@email.com",
+    "phone": "(702)123-4567",
+    "favoriteSong": "Something Anime",
+    "birthday": "January 1",
+    "birthYear": "2003"
+}
+
+### CREATE CONTACT !!!INCOMPLETE!!!
+POST http://localhost:8080/students HTTP/1.1
+content-type: application/json
+
+{
+    "firstName":"Shirley",
+    "email":"shirley@fakeEmail.com",
+    "favoriteColor":"pink",
+    "birthday":"01/01/1900"
+}
+
+### PUT student (edit Henrik by id)
+PUT http://localhost:8080/students/6528af7374ef262b0d2b1893 HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "Henrik",
+    "lastName": "Anvik",
+    "parentName": "Jolayne",
+    "email": "jolayne@email.com",
+    "phone": "(587)123-4567",
+    "favoriteSong": "Deep Something",
+    "birthday": "January 1",
+    "birthYear": "2011"
+}
+
+# --------------------------------------------------------------------------
+# LOCALHOST BOOKS
+
+### GET all books
+http://localhost:8080/musicBooks
+
+### DELETE student (easier up here, out of order; I'm being lazy!)
+DELETE http://localhost:8080/musicBooks/6528b160f9c2c2f2f99ac46a HTTP/1.1
+
+### GET Faber & Faber Primer (books by id)
+http://localhost:8080/musicBooks/6528b14f74ef262b0d2b18a0
+
+### GET F&F 1 Christmas (books by id)
+http://localhost:8080/musicBooks/6528b14f74ef262b0d2b18a5
+
+### GET 2A Piano Adventures (books by id)
+http://localhost:8080/musicBooks/6528b14f74ef262b0d2b18a8
+
+### GET F&F 2b Jazz & Blues (books by id)
+http://localhost:8080/musicBooks/6528b14f74ef262b0d2b18af
+
+### GET F&F 5 Christmas (books by id)
+http://localhost:8080/musicBooks/6528b14f74ef262b0d2b18b9
+
+### CREATE musicBook
+POST http://localhost:8080/musicBooks HTTP/1.1
+content-type: application/json
+
+{
+    "title": "John Thompson 1",
+    "series": "John Thompson Lesson Books",
+    "level": "1",
+    "publisher": "John Thompson"
+}
+
+### GET newest books by id
+http://localhost:8080/musicBooks/6528b335f9c2c2f2f99ac46c
+
+### CREATE musicBooks !!!INCOMPLETE!!!
+POST http://localhost:8080/musicBooks HTTP/1.1
+content-type: application/json
+
+{
+    "title": "F",
+    "series": "",
+    "level": "2",
+    "publisher": "Hal Leonard"
+}
+
+### PUT musicBooks (edit latest by id)
+PUT http://localhost:8080/musicBooks/6528b335f9c2c2f2f99ac46c HTTP/1.1
+content-type: application/json
+
+{
+    "title": "John Thompson 1",
+  "series": "John Thompson Lesson Books",
+  "level": "1",
+  "publisher": "No idea!"
+}
+
+
+
+
+
+
+# ---------------------------------------------------------------------------
+#  PRODUCTION ---------------------------------------------------------------
+# ---------------------------------------------------------------------------
+### GET blank message
+https://juliespackman-cse341-spring23.onrender.com/
+
+### GET all contacts
+https://juliespackman-cse341-spring23.onrender.com/contacts
+
+### GET Paul
+https://juliespackman-cse341-spring23.onrender.com/contacts/650e324d7801f348ea40b3c3
+
+### GET Gabby
+https://juliespackman-cse341-spring23.onrender.com/contacts/650e323d7801f348ea40b3c0
+
+### GET Lydia
+https://juliespackman-cse341-spring23.onrender.com/contacts/650e32427801f348ea40b3c1
+
+### GET Millie
+https://juliespackman-cse341-spring23.onrender.com/contacts/650e32487801f348ea40b3c2
+
+
+
+### CREATE CONTACT
+POST https://juliespackman-cse341-spring23.onrender.com/contacts HTTP/1.1
+content-type: application/json
+
+{
+    "firstName":"Shirley",
+    "lastName":"Temple",
+    "email":"shirley@render.com",
+    "favoriteColor":"pink",
+    "birthday":"01/01/1900"
+}
+
+### CREATE CONTACT !!!INCOMPLETE!!!
+POST http://juliespackman-cse341-spring23.onrender.com/contacts HTTP/1.1
+content-type: application/json
+
+{
+    "firstName":"Shirley",
+    "email":"shirley@fakeEmail.com",
+    "favoriteColor":"pink",
+    "birthday":"01/01/1900"
+}
+
+### PUT contact (edit Gabby by id)
+PUT http://juliespackman-cse341-spring23.onrender.com/contacts/650e323d7801f348ea40b3c0 HTTP/1.1
+content-type: application/json
+
+{
+    "firstName":"Gabby",
+    "lastName":"Spackman",
+    "email":"gabby@email.com",
+    "favoriteColor":"red",
+    "birthday":"10/10/2010"
+}
+
+
+### DELETE contact (delete by id)
+DELETE http://juliespackman-cse341-spring23.onrender.com/contacts/6516500fad283aaeda7a9acf HTTP/1.1
+
