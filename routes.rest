@@ -135,62 +135,121 @@ content-type: application/json
 # ---------------------------------------------------------------------------
 #  PRODUCTION ---------------------------------------------------------------
 # ---------------------------------------------------------------------------
-### GET blank message
-https://juliespackman-cse341-spring23.onrender.com/
 
-### GET all contacts
-https://juliespackman-cse341-spring23.onrender.com/contacts
 
-### GET Paul
-https://juliespackman-cse341-spring23.onrender.com/contacts/650e324d7801f348ea40b3c3
+### GET all students
+https://js-musicstudents-cse341.onrender.com/students
 
 ### GET Gabby
-https://juliespackman-cse341-spring23.onrender.com/contacts/650e323d7801f348ea40b3c0
-
-### GET Lydia
-https://juliespackman-cse341-spring23.onrender.com/contacts/650e32427801f348ea40b3c1
-
-### GET Millie
-https://juliespackman-cse341-spring23.onrender.com/contacts/650e32487801f348ea40b3c2
+https://js-musicstudents-cse341.onrender.com/students/6528af7374ef262b0d2b1890
 
 
 
-### CREATE CONTACT
-POST https://juliespackman-cse341-spring23.onrender.com/contacts HTTP/1.1
+### CREATE student
+POST https://js-musicstudents-cse341.onrender.com/students HTTP/1.1
 content-type: application/json
 
 {
-    "firstName":"Shirley",
-    "lastName":"Temple",
-    "email":"shirley@render.com",
-    "favoriteColor":"pink",
-    "birthday":"01/01/1900"
+    "firstName": "Samantha",
+    "lastName": "Delainey",
+    "parentName": "Dawna",
+    "email": "dawna@email.com",
+    "phone": "(702)123-4567",
+    "favoriteSong": "Rudolph",
+    "birthday": "January 1",
+    "birthYear": "2003"
 }
 
-### CREATE CONTACT !!!INCOMPLETE!!!
-POST http://juliespackman-cse341-spring23.onrender.com/contacts HTTP/1.1
+### CREATE student !!!INCOMPLETE!!!
+POST https://js-musicstudents-cse341.onrender.com/students HTTP/1.1
 content-type: application/json
 
 {
-    "firstName":"Shirley",
-    "email":"shirley@fakeEmail.com",
-    "favoriteColor":"pink",
-    "birthday":"01/01/1900"
+    "firstName": "Samantha",
+    "lastName": "d",
+    "parentName": "Dawna",
+    "email": "dawna@email.com",
+    "phone": "(702)123-4567",
+    "favoriteSong": "Rudolph",
+    "birthday": "January 1",
+    "birthYear": "2003"
 }
 
-### PUT contact (edit Gabby by id)
-PUT http://juliespackman-cse341-spring23.onrender.com/contacts/650e323d7801f348ea40b3c0 HTTP/1.1
+### PUT student (edit Gabby by id)
+PUT https://js-musicstudents-cse341.onrender.com/students/6528af7374ef262b0d2b1890 HTTP/1.1
 content-type: application/json
 
 {
-    "firstName":"Gabby",
-    "lastName":"Spackman",
-    "email":"gabby@email.com",
-    "favoriteColor":"red",
-    "birthday":"10/10/2010"
+    "firstName": "Gabby",
+    "lastName": "Spackman",
+    "parentName": "Julie",
+    "email": "spackMom@email.com",
+    "phone": "(403)123-4567",
+    "favoriteSong": "Something Country",
+    "birthday": "January 1",
+    "birthYear": "2008"
 }
 
 
 ### DELETE contact (delete by id)
-DELETE http://juliespackman-cse341-spring23.onrender.com/contacts/6516500fad283aaeda7a9acf HTTP/1.1
+DELETE https://js-musicstudents-cse341.onrender.com/students/652a1dd2bf578bc8b7e04656 HTTP/1.1
 
+
+
+
+### GET all books
+https://js-musicstudents-cse341.onrender.com/musicBooks
+
+### DELETE book (easier up here, out of order; I'm being lazy!)
+DELETE https://js-musicstudents-cse341.onrender.com/musicBooks/652a1e75bf578bc8b7e04657 HTTP/1.1
+
+### GET Faber & Faber Primer (books by id)
+https://js-musicstudents-cse341.onrender.com/musicBooks/6528b14f74ef262b0d2b18a0
+
+### GET F&F 1 Christmas (books by id)
+https://js-musicstudents-cse341.onrender.com/musicBooks/6528b14f74ef262b0d2b18a5
+
+### GET 2A Piano Adventures (books by id)
+https://js-musicstudents-cse341.onrender.com/musicBooks/6528b14f74ef262b0d2b18a8
+
+### GET F&F 2b Jazz & Blues (books by id)
+https://js-musicstudents-cse341.onrender.com/musicBooks/6528b14f74ef262b0d2b18af
+
+### GET F&F 5 Christmas (books by id)
+https://js-musicstudents-cse341.onrender.com/musicBooks/6528b14f74ef262b0d2b18b9
+
+### CREATE musicBook
+POST https://js-musicstudents-cse341.onrender.com/musicBooks HTTP/1.1
+content-type: application/json
+
+{
+    "title": "John Thompson 1",
+    "series": "John Thompson Lesson Books",
+    "level": "1",
+    "publisher": "John Thompson"
+}
+
+### GET newest books by id
+https://js-musicstudents-cse341.onrender.com/musicBooks/652a1e75bf578bc8b7e04657
+
+### CREATE musicBooks !!!INCOMPLETE!!!
+POST https://js-musicstudents-cse341.onrender.com/musicBooks HTTP/1.1
+content-type: application/json
+
+{
+    "title": "F",
+    "series": "",
+    "level": "2",
+    "publisher": "Hal Leonard"
+}
+
+### PUT musicBooks (edit latest by id)
+PUT https://js-musicstudents-cse341.onrender.com/musicBooks/652a1e75bf578bc8b7e04657 HTTP/1.1
+content-type: application/json
+
+{
+    "title": "John Thompson 1",
+  "series": "John Thompson Lesson Books",
+  "level": "1",
+  "publisher": "No idea!"
+}
