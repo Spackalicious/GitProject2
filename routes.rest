@@ -141,7 +141,7 @@ content-type: application/json
 https://js-musicstudents-cse341.onrender.com/students
 
 ### GET Gabby
-https://js-musicstudents-cse341.onrender.com/students/6528af7374ef262b0d2b1890
+https://js-musicstudents-cse341.onrender.com/students/652a1ffabf578bc8b7e04658
 
 
 
