@@ -1,14 +1,17 @@
-const routes = require('express').Router();
+const express = require('express');
+const router = express.Router();
+
 const musicBooksController = require('../controllers/musicBooks');
 const validation = require('../middleware/validate');
 
-routes.get('/', musicBooksController.getBooks);
-routes.get('/:id', musicBooksController.getIndividualBook);
+router.get('/', musicBooksController.getAll);
 
-routes.post('/', validation.saveMusicBook, musicBooksController.newBook);
+router.get('/:id', musicBooksController.getSingle);
 
-routes.put('/:id', validation.saveMusicBook, musicBooksController.updateBook);
+router.post('/', validation.saveBook, musicBooksController.createBook);
 
-routes.delete('/:id', musicBooksController.removeBook);
+router.put('/:id', validation.saveBook, musicBooksController.updateBook);
 
-module.exports = routes;
+router.delete('/:id', musicBooksController.deleteBook);
+
+module.exports = router;

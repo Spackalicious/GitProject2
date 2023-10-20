@@ -1,255 +1,149 @@
-# LOCALHOST
-### GET
-http://localhost:8080
+// LOCALHOST STUDENTS----------------------------------------------
+### Get all students
+GET http://localhost:8080/students
 
-### GET all students
-http://localhost:8080/students
+### Get student by id
+GET http://localhost:8080/students/6531f49dd6489985b38789f8
 
-### DELETE student (easier up here, out of order; I'm being lazy!)
-DELETE http://localhost:8080/students/6528b160f9c2c2f2f99ac46a HTTP/1.1
-
-### GET Gabby (student by id)
-http://localhost:8080/students/6528af7374ef262b0d2b1890
-
-### GET Lydia (student by id)
-http://localhost:8080/students/6528af7374ef262b0d2b1891
-
-### GET Millie (student by id)
-http://localhost:8080/students/6528af7374ef262b0d2b1892
-
-### GET Bryn (student by id)
-http://localhost:8080/students/6528af7374ef262b0d2b1894
-
-### GET Henrik (student by id)
-http://localhost:8080/students/6528af7374ef262b0d2b1893
-
-### GET newest student by id
-http://localhost:8080/students/6528b18af9c2c2f2f99ac46b
-
-### CREATE CONTACT
+### Create student
 POST http://localhost:8080/students HTTP/1.1
 content-type: application/json
 
 {
-    "firstName": "Joshua",
-    "lastName": "Bourne",
-    "parentName": "Erica",
-    "email": "erica@email.com",
-    "phone": "(702)123-4567",
-    "favoriteSong": "Something Anime",
-    "birthday": "January 1",
-    "birthYear": "2003"
-}
-
-### CREATE CONTACT !!!INCOMPLETE!!!
-POST http://localhost:8080/students HTTP/1.1
-content-type: application/json
-
-{
-    "firstName":"Shirley",
-    "email":"shirley@fakeEmail.com",
-    "favoriteColor":"pink",
-    "birthday":"01/01/1900"
-}
-
-### PUT student (edit Henrik by id)
-PUT http://localhost:8080/students/6528af7374ef262b0d2b1893 HTTP/1.1
-content-type: application/json
-
-{
-    "firstName": "Henrik",
-    "lastName": "Anvik",
-    "parentName": "Jolayne",
-    "email": "jolayne@email.com",
-    "phone": "(587)123-4567",
-    "favoriteSong": "Deep Something",
-    "birthday": "January 1",
-    "birthYear": "2011"
-}
-
-# --------------------------------------------------------------------------
-# LOCALHOST BOOKS
-
-### GET all books
-http://localhost:8080/musicBooks
-
-### DELETE student (easier up here, out of order; I'm being lazy!)
-DELETE http://localhost:8080/musicBooks/6528b160f9c2c2f2f99ac46a HTTP/1.1
-
-### GET Faber & Faber Primer (books by id)
-http://localhost:8080/musicBooks/6528b14f74ef262b0d2b18a0
-
-### GET F&F 1 Christmas (books by id)
-http://localhost:8080/musicBooks/6528b14f74ef262b0d2b18a5
-
-### GET 2A Piano Adventures (books by id)
-http://localhost:8080/musicBooks/6528b14f74ef262b0d2b18a8
-
-### GET F&F 2b Jazz & Blues (books by id)
-http://localhost:8080/musicBooks/6528b14f74ef262b0d2b18af
-
-### GET F&F 5 Christmas (books by id)
-http://localhost:8080/musicBooks/6528b14f74ef262b0d2b18b9
-
-### CREATE musicBook
-POST http://localhost:8080/musicBooks HTTP/1.1
-content-type: application/json
-
-{
-    "title": "John Thompson 1",
-    "series": "John Thompson Lesson Books",
-    "level": "1",
-    "publisher": "John Thompson"
-}
-
-### GET newest books by id
-http://localhost:8080/musicBooks/6528b335f9c2c2f2f99ac46c
-
-### CREATE musicBooks !!!INCOMPLETE!!!
-POST http://localhost:8080/musicBooks HTTP/1.1
-content-type: application/json
-
-{
-    "title": "F",
-    "series": "",
-    "level": "2",
-    "publisher": "Hal Leonard"
-}
-
-### PUT musicBooks (edit latest by id)
-PUT http://localhost:8080/musicBooks/6528b335f9c2c2f2f99ac46c HTTP/1.1
-content-type: application/json
-
-{
-    "title": "John Thompson 1",
-  "series": "John Thompson Lesson Books",
-  "level": "1",
-  "publisher": "No idea!"
-}
-
-
-
-
-
-
-# ---------------------------------------------------------------------------
-#  PRODUCTION ---------------------------------------------------------------
-# ---------------------------------------------------------------------------
-
-
-### GET all students
-https://js-musicstudents-cse341.onrender.com/students
-
-### GET Gabby
-https://js-musicstudents-cse341.onrender.com/students/652a1ffabf578bc8b7e04658
-
-
-
-### CREATE student
-POST https://js-musicstudents-cse341.onrender.com/students HTTP/1.1
-content-type: application/json
-
-{
-    "firstName": "Samantha",
-    "lastName": "Delainey",
-    "parentName": "Dawna",
-    "email": "dawna@email.com",
-    "phone": "(702)123-4567",
-    "favoriteSong": "Rudolph",
-    "birthday": "January 1",
-    "birthYear": "2003"
-}
-
-### CREATE student !!!INCOMPLETE!!!
-POST https://js-musicstudents-cse341.onrender.com/students HTTP/1.1
-content-type: application/json
-
-{
-    "firstName": "Samantha",
-    "lastName": "d",
-    "parentName": "Dawna",
-    "email": "dawna@email.com",
-    "phone": "(702)123-4567",
-    "favoriteSong": "Rudolph",
-    "birthday": "January 1",
-    "birthYear": "2003"
-}
-
-### PUT student (edit Gabby by id)
-PUT https://js-musicstudents-cse341.onrender.com/students/6528af7374ef262b0d2b1890 HTTP/1.1
-content-type: application/json
-
-{
-    "firstName": "Gabby",
-    "lastName": "Spackman",
+    "firstName": "Meredith",
+    "lastName": "Elliott",
     "parentName": "Julie",
     "email": "spackMom@email.com",
     "phone": "(403)123-4567",
-    "favoriteSong": "Something Country",
+    "favoriteSong": "Something Elevator",
     "birthday": "January 1",
-    "birthYear": "2008"
+    "birthYear": "2018"
 }
 
+### PUT student
+PUT http://localhost:8080/students/6531f49dd6489985b38789f8 HTTP/1.1
+content-type: application/json
 
-### DELETE contact (delete by id)
-DELETE https://js-musicstudents-cse341.onrender.com/students/652a1dd2bf578bc8b7e04656 HTTP/1.1
+{
+    "firstName": "Meredith",
+    "lastName": "Samsonite",
+    "parentName": "Julie",
+    "email": "spackMom@email.com",
+    "phone": "(403)123-4567",
+    "favoriteSong": "Something Elevator",
+    "birthday": "January 1",
+    "birthYear": "2018"
+}
+### DELETE student
+DELETE http://localhost:8080/students/6531f49dd6489985b38789f8 HTTP/1.1
+
+
+//------------------------------------------------------------------------------------
+// LOCALHOST MUSIC BOOKS------------------------------------------
+### Get all music books
+GET http://localhost:8080/musicBooks
+
+### Get music book by id
+GET http://localhost:8080/musicBooks/6531f64ad6489985b38789f9
+
+### Create music book
+POST http://localhost:8080/musicBooks HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Best Book Ever",
+    "series": "Popular Series",
+    "level": "1000",
+    "publisher": "Fisher Price"
+}
+
+### PUT music book
+PUT http://localhost:8080/musicBooks/6531f64ad6489985b38789f9 HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Best Book Ever x2",
+    "series": "Popular Series",
+    "level": "10002",
+    "publisher": "Golden Books"
+}
+### DELETE music book
+DELETE http://localhost:8080/musicBooks/6531f64ad6489985b38789f9 HTTP/1.1
 
 
 
+//----------------------------------------------------------------------------
+//---------------PRODUCTION---------------------------------------------------
+//----------------------------------------------------------------------------
 
-### GET all books
-https://js-musicstudents-cse341.onrender.com/musicBooks
+// PRODUCTION STUDENTS----------------------------------------------
+### Get all students
+GET https://js-musicstudents-cse341.onrender.com/students
 
-### DELETE book (easier up here, out of order; I'm being lazy!)
-DELETE https://js-musicstudents-cse341.onrender.com/musicBooks/652a1e75bf578bc8b7e04657 HTTP/1.1
+### Get student by id
+GET https://js-musicstudents-cse341.onrender.com/students/6531f49dd6489985b38789f8
 
-### GET Faber & Faber Primer (books by id)
-https://js-musicstudents-cse341.onrender.com/musicBooks/6528b14f74ef262b0d2b18a0
+### Create student
+POST https://js-musicstudents-cse341.onrender.com/students HTTP/1.1
+content-type: application/json
 
-### GET F&F 1 Christmas (books by id)
-https://js-musicstudents-cse341.onrender.com/musicBooks/6528b14f74ef262b0d2b18a5
+{
+    "firstName": "Meredith",
+    "lastName": "Elliott",
+    "parentName": "Julie",
+    "email": "spackMom@email.com",
+    "phone": "(403)123-4567",
+    "favoriteSong": "Something Elevator",
+    "birthday": "January 1",
+    "birthYear": "2018"
+}
 
-### GET 2A Piano Adventures (books by id)
-https://js-musicstudents-cse341.onrender.com/musicBooks/6528b14f74ef262b0d2b18a8
+### PUT student
+PUT https://js-musicstudents-cse341.onrender.com/students/6531f49dd6489985b38789f8 HTTP/1.1
+content-type: application/json
 
-### GET F&F 2b Jazz & Blues (books by id)
-https://js-musicstudents-cse341.onrender.com/musicBooks/6528b14f74ef262b0d2b18af
+{
+    "firstName": "Meredith",
+    "lastName": "Samsonite",
+    "parentName": "Julie",
+    "email": "spackMom@email.com",
+    "phone": "(403)123-4567",
+    "favoriteSong": "Something Elevator",
+    "birthday": "January 1",
+    "birthYear": "2018"
+}
+### DELETE student
+DELETE https://js-musicstudents-cse341.onrender.com/students/6531f49dd6489985b38789f8 HTTP/1.1
 
-### GET F&F 5 Christmas (books by id)
-https://js-musicstudents-cse341.onrender.com/musicBooks/6528b14f74ef262b0d2b18b9
 
-### CREATE musicBook
+------------------------------------------------------------------------------------
+// PRODUCTION MUSIC BOOKS------------------------------------------
+### Get all music books
+GET https://js-musicstudents-cse341.onrender.com/musicBooks
+
+### Get music book by id
+GET https://js-musicstudents-cse341.onrender.com/musicBooks/6531f64ad6489985b38789f9
+
+### Create music book
 POST https://js-musicstudents-cse341.onrender.com/musicBooks HTTP/1.1
 content-type: application/json
 
 {
-    "title": "John Thompson 1",
-    "series": "John Thompson Lesson Books",
-    "level": "1",
-    "publisher": "John Thompson"
+    "title": "Best Book Ever",
+    "series": "Popular Series",
+    "level": "1000",
+    "publisher": "Fisher Price"
 }
 
-### GET newest books by id
-https://js-musicstudents-cse341.onrender.com/musicBooks/652a1e75bf578bc8b7e04657
-
-### CREATE musicBooks !!!INCOMPLETE!!!
-POST https://js-musicstudents-cse341.onrender.com/musicBooks HTTP/1.1
+### PUT music book
+PUT https://js-musicstudents-cse341.onrender.com/musicBooks/6531f64ad6489985b38789f9 HTTP/1.1
 content-type: application/json
 
 {
-    "title": "F",
-    "series": "",
-    "level": "2",
-    "publisher": "Hal Leonard"
+    "title": "Best Book Ever x2",
+    "series": "Popular Series",
+    "level": "10002",
+    "publisher": "Golden Books"
 }
-
-### PUT musicBooks (edit latest by id)
-PUT https://js-musicstudents-cse341.onrender.com/musicBooks/652a1e75bf578bc8b7e04657 HTTP/1.1
-content-type: application/json
-
-{
-    "title": "John Thompson 1",
-  "series": "John Thompson Lesson Books",
-  "level": "1",
-  "publisher": "No idea!"
-}
+### DELETE music book
+DELETE https://js-musicstudents-cse341.onrender.com/musicBooks/6531f64ad6489985b38789f9 HTTP/1.1

@@ -1,7 +1,7 @@
 const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
 
-const getBooks = (req, res) => {
+const getAll = (req, res) => {
   mongodb
     .getDb()
     .db()
@@ -11,102 +11,90 @@ const getBooks = (req, res) => {
       if (err) {
         res.status(400).json({ message: err });
       }
+    // }).then((lists) => {
       res.setHeader('Content-Type', 'application/json');
-      res.status(200).json(lists); 
-  });    
+      res.status(200).json(lists);
+    });
 };
 
-const getIndividualBook = (req, res) => {
+const getSingle = (req, res) => {
   if (!ObjectId.isValid(req.params.id)) {
-    res.status(400).json('Must use a valid music book id to to find a music book');
+    res.status(400).json('Must use a valid musicBook id to find a musicBook.');
   }
-  const bookId = new ObjectId(req.params.id);
+  const userId = new ObjectId(req.params.id);
   mongodb
     .getDb()
     .db()
     .collection('musicBooks')
-    .find({ _id: bookId })
+    .find({ _id: userId })
     .toArray((err, result) => {
       if (err) {
         res.status(400).json({ message: err });
       }
+    // }).then((lists) => {
     res.setHeader('Content-Type', 'application/json');
-    res.status(200).json(lists[0]);
-  });  
+    res.status(200).json(result[0]);
+  });
 };
 
-const newBook = async (req, res) => {
-  const book = {
-    title: req.body.title, 
-    series: req.body.series, 
-    level: req.body.level, 
+const createBook = async (req, res) => {
+  const musicBook = {
+    title: req.body.title,
+    series: req.body.series,
+    level: req.body.level,
     publisher: req.body.publisher
   };
-
-  const response = await mongodb.getDb().db().collection('musicBooks').insertOne(book);
+  const response = await mongodb.getDb().db().collection('musicBooks').insertOne(musicBook);
   if (response.acknowledged) {
     res.status(201).json(response);
   } else {
-    res.status(500).json(response.error || 'Some error occurred while creating the music book');
+    res.status(500).json(response.error || 'Some error occurred while creating the musicBook.');
   }
 };
 
 const updateBook = async (req, res) => {
   if (!ObjectId.isValid(req.params.id)) {
-    res.status(400).json('Must use a valid music book id to update a music book');
+    res.status(400).json('Must use a valid musicBook id to update a musicBook.');
   }
-    const bookId = new ObjectId(req.params.id);
-    const book = {
-        title: req.body.title, 
-        series: req.body.series, 
-        level: req.body.level, 
-        publisher: req.body.publisher
-      };
-    const response = await mongodb
-      .getDb()
-      .db()
-      .collection('musicBooks')
-      .replaceOne({ _id: bookId }, book);
-    console.log(response);
-    if (response.modifiedCount > 0) {
-      res.status(204).send();
-      console.log(`${book.title} Level ${book.level} of ${book.series} successfully updated`);
-    } else {
-      res.status(500).json(response.error || `An error occured while trying to update ${book.title} Level ${book.level} of ${book.series}.`);
-      console.log(`An error occured while trying to update ${book.title} Level ${book.level} of ${book.series}.`);
-    }
-};
-
-const removeBook = async (req, res) => {
-  if (!ObjectId.isValid(req.params.id)) {
-    res.status(400).json('Must use a valid music book id to delete a music book');
-  }
-  const bookId = new ObjectId(req.params.id);
-  const delResponse = await mongodb
+  const userId = new ObjectId(req.params.id);
+  // be aware of updateOne if you only want to update specific fields
+  const musicBook = {
+    title: req.body.title,
+    series: req.body.series,
+    level: req.body.level,
+    publisher: req.body.publisher
+  };
+  const response = await mongodb
     .getDb()
     .db()
     .collection('musicBooks')
-    .remove({_id: bookId}, true);
-    console.log(delResponse);
-    if (delResponse.deletedCount > 0 ) {
-      res.status(200).send();
-      console.log('Book successfully deleted');
-    } else {
-      res.status(500).json(delResponse.error || 'An error occured while trying to delete the book.');
-    }  
-};
-  
-module.exports = {     
-  getBooks
-  , getIndividualBook
-  , newBook
-  , updateBook
-  , removeBook
+    .replaceOne({ _id: userId }, musicBook);
+  console.log(response);
+  if (response.modifiedCount > 0) {
+    res.status(204).send();
+  } else {
+    res.status(500).json(response.error || 'Some error occurred while updating the musicBook.');
+  }
 };
 
+const deleteBook = async (req, res) => {
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).json('Must use a valid musicBook id to delete a musicBook.');
+  }
+  const userId = new ObjectId(req.params.id);
+  const response = await mongodb.getDb().db().collection('musicBooks').remove({ _id: userId }, true);
+  console.log(response);
+  if (response.deletedCount > 0) {
+    res.status(204).send();
+  } else {
+    res.status(500).json(response.error || 'Some error occurred while deleting the musicBook.');
+  }
+};
 
-
-
-
-
-
+module.exports = {
+  getAll,
+  getSingle,
+  createBook,
+  updateBook,
+  deleteBook
+};

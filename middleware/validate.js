@@ -8,9 +8,8 @@ const saveStudent = (req, res, next) => {
         email: 'required|email',
         phone: 'required|string',
         favoriteSong: 'required|string',
-        birthday: 'required|string',
-        // birthYear: 'required|regex:/^(19|20)[\\d]{2,2}$/'
-        birthYear: 'required|string'
+        birthday: 'string',
+        birthYear: 'string'
     };
     validator(req.body, validationRule, {}, (err, status) => {
         if (!status) {
@@ -25,12 +24,12 @@ const saveStudent = (req, res, next) => {
     });
 };
 
-const saveMusicBook = (req, res, next) => {
+const saveBook = (req, res, next) => {
     const validationRule = {
         title: 'required|string',
         series: 'required|string',
         level: 'required|string',
-        publisher: 'required|email'
+        publisher: 'required|string'
     };
     validator(req.body, validationRule, {}, (err, status) => {
         if (!status) {
@@ -46,5 +45,5 @@ const saveMusicBook = (req, res, next) => {
 };
 
 module.exports = {
-    saveStudent, saveMusicBook
+    saveStudent, saveBook
 };

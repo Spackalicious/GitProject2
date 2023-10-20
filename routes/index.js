@@ -1,7 +1,8 @@
-const routes = require('express').Router();
+const express = require('express');
+const router = express.Router();
 
-// routes.use('/', require('./swagger'));
-routes.use('/students', require('./students'));
-routes.use('/musicBooks', require('./musicBooks'));
+router.use('/', require('./swagger'));
+router.use('/musicBooks', require('./musicBooks'));
+router.use('/students', require('./students'));
 
-module.exports = routes; 
+module.exports = router;
