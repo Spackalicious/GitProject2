@@ -29,11 +29,12 @@ router.get('/profile', requiresAuth(), (req, res) => {
 // router.get('/musicBooks', requiresAuth(), (req, res) => {
 //     res.send('/musicBooks', require('./musicBooks'))
 // });
+router.use('/', requiresAuth(), (req, res) => {
+    res.send("Pick an actual route!");
+  });
 router.use('/', requiresAuth(), require('./swagger'));
 router.use('/musicBooks', requiresAuth(), require('./musicBooks'));
 router.use('/students', requiresAuth(), require('./students'));
-
-
 
 // router.use('/', require('./swagger'));
 // router.use('/musicBooks', require('./musicBooks'));
