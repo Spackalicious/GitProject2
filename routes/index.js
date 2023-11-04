@@ -26,12 +26,7 @@ const { requiresAuth } = require('express-openid-connect');
 router.get('/profile', requiresAuth(), (req, res) => {
   res.send(JSON.stringify(req.oidc.user));
 });
-// router.get('/musicBooks', requiresAuth(), (req, res) => {
-//     res.send('/musicBooks', require('./musicBooks'))
-// });
-// router.use('/', requiresAuth(), (req, res) => {
-//     res.send("Pick an actual route!");
-//   });
+
 router.use('/', requiresAuth(), require('./swagger'));
 router.use('/musicBooks', requiresAuth(), require('./musicBooks'));
 router.use('/students', requiresAuth(), require('./students'));
